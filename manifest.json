@@ -1,0 +1,104 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsHybrid Lite Fusion",
+  "version": "6.9.6",
+  "description": "WhatsHybrid v52 — CRM Kanban, Labels na lista de chats, Analytics, Tasks, Smart Replies IA. Seletores atualizados DEZ/2025. Logs silenciosos.",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_title": "WhatsHybrid Lite",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "downloads",
+    "notifications",
+    "scripting",
+    "sidePanel",
+    "storage",
+    "tabs",
+    "unlimitedStorage",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*",
+    "https://api.whatsapp.com/*",
+    "https://*.whatsapp.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "content/utils/constants.js",
+        "content/utils/logger.js",
+        "content/utils/phone-validator.js",
+        "content/utils/selectors.js",
+        "content/utils/version-detector.js",
+        "content/utils/compatibility-manager.js",
+        "content/worker-content.js",
+        "content/content.js",
+        "modules/event-bus.js",
+        "modules/notifications.js",
+        "modules/labels.js",
+        "modules/crm.js",
+        "modules/tasks.js",
+        "modules/crm-badge-injector.js",
+        "modules/task-markers-injector.js",
+        "modules/quick-actions-injector.js",
+        "modules/init.js",
+        "content/top-panel-injector.js",
+        "content/extractor-v6-optimized.js",
+        "content/waextractor.v6.js",
+        "content/label-button-injector.js",
+        "chatbackup/content.js"
+      ],
+      "css": [
+        "content/top-panel.css",
+        "chatbackup/injected.css",
+        "modules/modules.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/extractor.contacts.js",
+        "content/inject.js",
+        "content/wpp-hooks.js",
+        "chatbackup/extractor.js",
+        "icons/*.png",
+        "icons/128.png",
+        "icons/16.png",
+        "icons/48.png",
+        "utils/google-sheets-export.js",
+        "utils/storage.js",
+        "utils/utils-optimized.js",
+        "crm/crm.html",
+        "crm/crm.css",
+        "crm/crm.js"
+      ],
+      "matches": [
+        "https://api.whatsapp.com/*",
+        "https://web.whatsapp.com/*"
+      ]
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+}

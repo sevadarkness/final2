@@ -1,0 +1,739 @@
+/**
+ * 🎨 Modules CSS - Estilos Premium para todos os módulos
+ * Design system consistente com WhatsHybrid
+ */
+
+/* ============================================
+   VARIÁVEIS E RESET
+   ============================================ */
+:root {
+  --mod-primary: #8B5CF6;
+  --mod-primary-light: #A78BFA;
+  --mod-secondary: #3B82F6;
+  --mod-secondary-light: #60A5FA;
+  --mod-success: #10B981;
+  --mod-warning: #F59E0B;
+  --mod-error: #EF4444;
+  --mod-surface: rgba(26, 26, 46, 0.95);
+  --mod-surface-light: rgba(40, 40, 70, 0.9);
+  --mod-border: rgba(255, 255, 255, 0.1);
+  --mod-text: #FFFFFF;
+  --mod-text-muted: rgba(255, 255, 255, 0.6);
+  --mod-radius: 12px;
+  --mod-radius-sm: 8px;
+  --mod-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   CARDS E CONTAINERS
+   ============================================ */
+.mod-card {
+  background: var(--mod-surface);
+  border: 1px solid var(--mod-border);
+  border-radius: var(--mod-radius);
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.mod-card:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+}
+
+.mod-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--mod-border);
+}
+
+.mod-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mod-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+.mod-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--mod-radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.mod-btn-primary {
+  background: linear-gradient(135deg, var(--mod-primary), var(--mod-secondary));
+  color: white;
+}
+
+.mod-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+}
+
+.mod-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--mod-text);
+  border: 1px solid var(--mod-border);
+}
+
+.mod-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--mod-primary);
+}
+
+.mod-btn-danger {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--mod-error);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.mod-btn-danger:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+.mod-btn-sm {
+  padding: 6px 12px;
+  font-size: 11px;
+}
+
+.mod-btn-icon {
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+}
+
+/* ============================================
+   INPUTS E FORMS
+   ============================================ */
+.mod-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--mod-border);
+  border-radius: var(--mod-radius-sm);
+  color: var(--mod-text);
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.mod-input:focus {
+  outline: none;
+  border-color: var(--mod-primary);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.mod-input::placeholder {
+  color: var(--mod-text-muted);
+}
+
+.mod-label {
+  display: block;
+  font-size: 12px;
+  color: var(--mod-text-muted);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.mod-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* ============================================
+   BADGES E TAGS
+   ============================================ */
+.mod-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mod-badge-primary {
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--mod-primary-light);
+}
+
+.mod-badge-success {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--mod-success);
+}
+
+.mod-badge-warning {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--mod-warning);
+}
+
+.mod-badge-error {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--mod-error);
+}
+
+.mod-badge-info {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--mod-secondary-light);
+}
+
+/* ============================================
+   KPI CARDS
+   ============================================ */
+.mod-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.mod-kpi-card {
+  background: var(--mod-surface);
+  border: 1px solid var(--mod-border);
+  border-radius: var(--mod-radius);
+  padding: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.mod-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+}
+
+.mod-kpi-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.mod-kpi-value {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--mod-primary), var(--mod-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mod-kpi-label {
+  font-size: 11px;
+  color: var(--mod-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.mod-kpi-change {
+  font-size: 11px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.mod-kpi-change.positive { color: var(--mod-success); }
+.mod-kpi-change.negative { color: var(--mod-error); }
+
+/* ============================================
+   KANBAN BOARD
+   ============================================ */
+.mod-kanban {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.mod-kanban-column {
+  min-width: 200px;
+  flex: 1;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--mod-radius);
+  padding: 12px;
+}
+
+.mod-kanban-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--mod-primary);
+}
+
+.mod-kanban-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mod-kanban-count {
+  font-size: 11px;
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--mod-primary-light);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.mod-kanban-cards {
+  min-height: 100px;
+}
+
+.mod-deal-card {
+  background: var(--mod-surface);
+  border: 1px solid var(--mod-border);
+  border-radius: var(--mod-radius-sm);
+  padding: 12px;
+  margin-bottom: 8px;
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.mod-deal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mod-deal-card.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.mod-deal-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.mod-deal-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--mod-success);
+}
+
+.mod-deal-contact {
+  font-size: 11px;
+  color: var(--mod-text-muted);
+  margin-top: 4px;
+}
+
+/* ============================================
+   TASK LIST
+   ============================================ */
+.mod-task-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.mod-task-filter {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
+  border-radius: 20px;
+  color: var(--mod-text);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mod-task-filter:hover,
+.mod-task-filter.active {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: var(--mod-primary);
+}
+
+.mod-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.mod-task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--mod-surface);
+  border: 1px solid var(--mod-border);
+  border-radius: var(--mod-radius-sm);
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+
+.mod-task-item:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.mod-task-item.completed {
+  opacity: 0.6;
+}
+
+.mod-task-item.overdue {
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.mod-task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--mod-primary);
+}
+
+.mod-task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.mod-task-title {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mod-task-title.completed {
+  text-decoration: line-through;
+}
+
+.mod-task-desc {
+  font-size: 12px;
+  color: var(--mod-text-muted);
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mod-task-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--mod-text-muted);
+}
+
+.mod-task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ============================================
+   ANALYTICS CHARTS
+   ============================================ */
+.mod-chart-container {
+  min-height: 150px;
+  position: relative;
+}
+
+.mod-chart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  color: var(--mod-text-muted);
+  text-align: center;
+}
+
+.mod-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.mod-chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--mod-text-muted);
+}
+
+.mod-chart-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* ============================================
+   ACTIVITY TIMELINE
+   ============================================ */
+.mod-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.mod-timeline-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--mod-border);
+}
+
+.mod-timeline-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.mod-timeline-content {
+  flex: 1;
+}
+
+.mod-timeline-text {
+  font-size: 13px;
+}
+
+.mod-timeline-time {
+  font-size: 11px;
+  color: var(--mod-text-muted);
+  margin-top: 2px;
+}
+
+/* ============================================
+   MODALS
+   ============================================ */
+.mod-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease;
+}
+
+.mod-modal {
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease;
+}
+
+.mod-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.mod-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.mod-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--mod-text-muted);
+  transition: color 0.2s;
+}
+
+.mod-modal-close:hover {
+  color: var(--mod-text);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   INSIGHTS BOX
+   ============================================ */
+.mod-insight-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: var(--mod-radius-sm);
+  margin-bottom: 8px;
+}
+
+.mod-insight-icon {
+  font-size: 24px;
+}
+
+.mod-insight-content {
+  flex: 1;
+}
+
+.mod-insight-label {
+  font-size: 12px;
+  color: var(--mod-text-muted);
+}
+
+.mod-insight-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ============================================
+   CAMPAIGNS LIST
+   ============================================ */
+.mod-campaign-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid var(--mod-border);
+}
+
+.mod-campaign-info {
+  flex: 1;
+}
+
+.mod-campaign-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mod-campaign-date {
+  font-size: 11px;
+  color: var(--mod-text-muted);
+}
+
+.mod-campaign-stats {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.mod-campaign-stat {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mod-campaign-stat.success { color: var(--mod-success); }
+.mod-campaign-stat.error { color: var(--mod-error); }
+
+/* ============================================
+   SCROLLBAR CUSTOMIZADA
+   ============================================ */
+.mod-scrollable::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.mod-scrollable::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.mod-scrollable::-webkit-scrollbar-thumb {
+  background: var(--mod-primary);
+  border-radius: 3px;
+}
+
+.mod-scrollable::-webkit-scrollbar-thumb:hover {
+  background: var(--mod-primary-light);
+}
+
+/* ============================================
+   SPINNER
+   ============================================ */
+.mod-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--mod-border);
+  border-top-color: var(--mod-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+.mod-empty-state {
+  text-align: center;
+  padding: 32px;
+  color: var(--mod-text-muted);
+}
+
+.mod-empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.mod-empty-text {
+  font-size: 14px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 400px) {
+  .mod-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mod-kanban {
+    flex-direction: column;
+  }
+  
+  .mod-kanban-column {
+    min-width: 100%;
+  }
+}
