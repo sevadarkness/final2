@@ -4,7 +4,7 @@
  */
 
 import prisma from '../prisma.js';
-import { NotFoundError, ConflictError, AuthorizationError } from '../shared/errors/AppError.js';
+import { NotFoundError, ConflictError, ValidationError } from '../shared/errors/AppError.js';
 import { formatPaginatedResponse, parsePagination } from '../shared/utils/pagination.js';
 import { slugify } from '../shared/utils/formatters.js';
 import { generateToken } from '../shared/utils/crypto.js';

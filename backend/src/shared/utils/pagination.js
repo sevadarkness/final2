@@ -115,7 +115,7 @@ export function parseFilters(query, allowedFilters = []) {
 /**
  * Create Prisma pagination object
  */
-export function toPrismaPatination(pagination) {
+export function toPrismaPagination(pagination) {
   return {
     skip: pagination.skip,
     take: pagination.take,
@@ -208,7 +208,7 @@ export default {
   createPaginationMeta,
   parseSorting,
   parseFilters,
-  toPrismaPatination,
+  toPrismaPagination,
   parseCursorPagination,
   formatCursorPaginatedResponse,
   calculateOffset,
