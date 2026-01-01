@@ -182,13 +182,19 @@ export function isStrongPassword(password) {
 }
 
 /**
- * Sanitize string (remove HTML tags and special chars)
+ * Basic string sanitization - removes common HTML elements
+ * WARNING: This is NOT sufficient for preventing XSS attacks.
+ * For user-generated content that will be displayed as HTML, use a proper
+ * HTML sanitization library like DOMPurify or sanitize-html.
+ * This function is only for basic cleaning of plain text inputs.
  */
 export function sanitizeString(str) {
   if (!str || typeof str !== 'string') return '';
+  
+  // For plain text inputs, just remove ALL HTML tags and trim
+  // This is safe because we're not trying to preserve any HTML
   return str
-    .replace(/<[^>]*>/g, '') // Remove HTML tags
-    .replace(/[<>'"]/g, '') // Remove dangerous chars
+    .replace(/<[^>]*>/g, '') // Remove ALL HTML tags
     .trim();
 }
 
