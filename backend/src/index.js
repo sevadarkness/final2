@@ -31,6 +31,7 @@ import aiRoutes from './routes/ai.js';
 import licenseRoutes from './routes/license.js';
 import billingRoutes from './routes/billing.js';
 import webhooksRoutes from './routes/webhooks.js';
+import settingsRoutes from './routes/settings.js';
 import healthRoutes from './routes/health.js';
 
 // Middleware
@@ -130,6 +131,7 @@ app.use('/api/ai', aiRoutes);
 app.use('/api/license', licenseRoutes);
 app.use('/api/billing', billingRoutes);
 app.use('/api/webhooks', webhooksRoutes);
+app.use('/api/settings', settingsRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {
