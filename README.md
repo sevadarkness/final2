@@ -1,24 +1,101 @@
-# WhatsHybrid Lite - Browser Extension
+# WhatsHybrid Enterprise - Full-Stack Platform
 
-Uma extensão para navegador que automatiza o envio de mensagens no WhatsApp Web.
+**🚀 WhatsApp Business Automation + Enterprise Backend + Multi-Provider AI System**
 
-## 🎉 Melhorias Mais Recentes (v1.3.8)
+WhatsHybrid transforms from a browser extension into a complete enterprise platform with:
+- ✅ **Chrome Extension** for WhatsApp Web automation
+- ✅ **Enterprise Backend** with Node.js/Express + PostgreSQL + Redis
+- ✅ **Multi-Provider AI System** (8 providers: OpenAI, Anthropic, Google, Groq, Mistral, Cohere, Together, Ollama)
+- ✅ **Complete CRM** with pipelines, deals, tasks, and analytics
+- ✅ **Real-time capabilities** with Socket.io
+- ✅ **LGPD/GDPR compliant** with PII masking and audit logs
 
-### 🔒 Segurança Aprimorada
-- ✅ **Correção de segurança postMessage**: Todas as comunicações agora validam origem
-- ✅ **NetSniffer otimizado**: Usa apenas padrões específicos do WhatsApp
-- ✅ **CodeQL scan limpo**: 0 vulnerabilidades detectadas
-- ✅ **Limite de memória reduzido**: NetSniffer agora limitado a 5000 números (otimizado)
+---
 
-### 🏗️ Arquitetura Melhorada
-- ✅ **Listeners consolidados**: Background script agora usa único listener organizado
-- ✅ **Logging centralizado**: Sistema unificado de logs em todo o projeto
-- ✅ **Validação de telefone**: Normalização correta para números brasileiros e internacionais
-- ✅ **Cache inteligente**: Sistema LRU com proteção contra QuotaExceededError
+## 📦 Architecture
 
-### 📚 Documentação
-- ✅ **Consolidada**: 41 arquivos markdown reduzidos para 2 (README + docs/DOCUMENTATION.md)
-- ✅ **Documentação técnica**: Nova documentação completa para desenvolvedores
+This repository contains two main components:
+
+### 1. 🎯 Extension (Chrome/Browser)
+WhatsApp Web automation with CRM, campaigns, and local AI integration.
+
+### 2. 🏢 Backend (Enterprise Server)
+RESTful API + Socket.io + Multi-provider AI system.
+
+**[📖 See ENTERPRISE_IMPLEMENTATION.md for complete backend details](./ENTERPRISE_IMPLEMENTATION.md)**
+
+---
+
+## 🆕 Latest Updates (v2.0.0 - Enterprise Edition)
+
+### 🤖 Multi-Provider AI System
+- ✅ **8 AI Providers** with intelligent routing
+- ✅ **AI Copilot** - Real-time response suggestions
+- ✅ **Smart Replies** - 3-5 contextual quick replies
+- ✅ **Sentiment Analysis** - Positive/Neutral/Negative detection
+- ✅ **Lead Scoring** - Predictive scoring (0-100)
+- ✅ **Intent Classification** - Understand user intent
+- ✅ **Entity Extraction** - Names, emails, phones, etc.
+- ✅ **Conversation Summarization**
+- ✅ **Multi-language Translation**
+
+### 🏢 Enterprise Backend
+- ✅ **30+ Database Models** with Prisma ORM
+- ✅ **JWT Authentication** with refresh tokens
+- ✅ **Multi-tenant Workspaces**
+- ✅ **Complete CRM System**
+- ✅ **Campaign Management**
+- ✅ **Task Management** with reminders
+- ✅ **Real-time Analytics**
+- ✅ **Webhook System**
+- ✅ **Audit Logging**
+
+### 🔒 Security Enhancements
+- ✅ **PII Masking** before AI calls
+- ✅ **Rate Limiting** with Redis
+- ✅ **Circuit Breaker** for AI providers
+- ✅ **Content Safety Filter**
+- ✅ **LGPD/GDPR Compliance**
+
+---
+
+## 🚀 Quick Start
+
+### Backend Setup (5 minutes)
+
+```bash
+cd backend
+
+# 1. Install dependencies
+npm install
+
+# 2. Copy environment template
+cp .env.example .env
+# Edit .env with at least one AI provider key (OpenAI, Anthropic, or Google)
+
+# 3. Start services with Docker
+docker-compose up -d
+
+# 4. Generate Prisma client and run migrations
+npm run prisma:generate
+npm run prisma:migrate
+
+# 5. Start backend server
+npm run dev
+```
+
+Server runs on `http://localhost:3000`  
+**[📖 Complete backend documentation →](./backend/README.md)**
+
+### Extension Setup
+
+1. Open Chrome and navigate to `chrome://extensions/`
+2. Enable "Developer mode"
+3. Click "Load unpacked"
+4. Select the repository root folder
+5. Open WhatsApp Web and start using the extension
+
+---
 
 ## ✨ Funcionalidades Principais
 
