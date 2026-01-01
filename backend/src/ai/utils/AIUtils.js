@@ -176,7 +176,7 @@ export class PIIMasker {
     }
 
     if (maskIP) {
-      masked = masked.replace(this.patterns.ip, '***.***.***. ***');
+      masked = masked.replace(this.patterns.ip, '***.***.***.***');
     }
 
     return masked;

@@ -238,11 +238,13 @@
         }
 
         async getAIUsage(workspaceId) {
-            return await this.get(`/ai/usage?workspaceId=${workspaceId}`);
+            const query = new URLSearchParams({ workspaceId }).toString();
+            return await this.get(`/ai/usage?${query}`);
         }
 
         async getAICredits(workspaceId) {
-            return await this.get(`/ai/credits?workspaceId=${workspaceId}`);
+            const query = new URLSearchParams({ workspaceId }).toString();
+            return await this.get(`/ai/credits?${query}`);
         }
 
         // ====================================
@@ -250,8 +252,11 @@
         // ====================================
 
         async getContacts(workspaceId, params = {}) {
-            const query = new URLSearchParams(params).toString();
-            return await this.get(`/contacts?workspaceId=${workspaceId}&${query}`);
+            const query = new URLSearchParams({
+                workspaceId: workspaceId,
+                ...params
+            }).toString();
+            return await this.get(`/contacts?${query}`);
         }
 
         async getContact(id) {
@@ -259,7 +264,8 @@
         }
 
         async createContact(workspaceId, data) {
-            return await this.post(`/contacts?workspaceId=${workspaceId}`, data);
+            const query = new URLSearchParams({ workspaceId }).toString();
+            return await this.post(`/contacts?${query}`, data);
         }
 
         async updateContact(id, data) {

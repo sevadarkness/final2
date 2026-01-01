@@ -13,6 +13,8 @@ export class AIRouterService {
   constructor() {
     this.providers = new Map();
     this.circuitBreakers = new Map();
+    this.failureThreshold = parseInt(process.env.AI_CIRCUIT_BREAKER_THRESHOLD || '3');
+    this.resetTimeout = parseInt(process.env.AI_CIRCUIT_BREAKER_RESET_TIMEOUT || '60000'); // 1 minute
     this.initializeProviders();
   }
 
@@ -269,10 +271,9 @@ export class AIRouterService {
     // Se circuit breaker está aberto
     if (breaker.isOpen) {
       const timeSinceFailure = Date.now() - breaker.lastFailure;
-      const resetTimeout = 60000; // 1 minuto
 
       // Tentar reset após timeout
-      if (timeSinceFailure > resetTimeout) {
+      if (timeSinceFailure > this.resetTimeout) {
         breaker.isOpen = false;
         breaker.failures = 0;
         console.log(`[AIRouter] Circuit breaker reset for ${providerId}`);
@@ -294,8 +295,8 @@ export class AIRouterService {
     breaker.failures += 1;
     breaker.lastFailure = Date.now();
 
-    // Abrir circuit breaker após 3 falhas
-    if (breaker.failures >= 3) {
+    // Abrir circuit breaker após múltiplas falhas
+    if (breaker.failures >= this.failureThreshold) {
       breaker.isOpen = true;
       console.warn(`[AIRouter] Circuit breaker opened for ${providerId}`);
     }
